@@ -1,0 +1,57 @@
+{
+  "model_name": "Clyde TinyGPT Base",
+  "version": "1.0.0",
+  "architecture": "GPT-style transformer",
+  "dimensions": {
+    "n_embed": 64,
+    "n_head": 4,
+    "n_layer": 2,
+    "block_size": 32,
+    "vocab_size": 65
+  },
+  "capabilities": {
+    "reading": true,
+    "writing": true,
+    "speaking": true,
+    "listening": true,
+    "translation": true,
+    "programming": true,
+    "powerpoint_creation": true,
+    "graphic_generation": true,
+    "tool_calling": true,
+    "multi_language": true
+  },
+  "language_support": [
+    "english",
+    "python",
+    "any"
+  ],
+  "vocabulary": {
+    "chars": " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':\",./<>?`~",
+    "size": 65
+  },
+  "training_spec": {
+    "format": "sft.jsonl with pack/user/assistant fields",
+    "packs": [
+      "english",
+      "python",
+      "bugs",
+      "tool-use-citations",
+      "fact-checking",
+      "boundary-aware"
+    ],
+    "example_row": {
+      "pack": "english",
+      "user": "User question",
+      "assistant": "Clyde answer with Source: citation",
+      "source_citation": "training_data_pack"
+    }
+  },
+  "integration": {
+    "clyde_repo": "~/Clyde/",
+    "tinygpt_dir": "~/services/local_storage/tinygpt/",
+    "ollama_compatible": true,
+    "github_repo": "PyMite6941/tinygpt-base"
+  },
+  "description": "Base model architecture for Clyde AI - minimal TinyGPT model ready for local CPU training and inference"
+}

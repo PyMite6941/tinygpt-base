@@ -1,0 +1,55 @@
+{
+  "model_name": "Clyde Base Model",
+  "version": "1.0.0",
+  "architecture": "TinyGPT 2-layer transformer",
+  "parameters": {
+    "n_embd": 64,
+    "n_layer": 2,
+    "n_head": 4,
+    "block_size": 32,
+    "vocab_size": 65
+  },
+  "capabilities": {
+    "reading": true,
+    "writing": true,
+    "speaking": true,
+    "listening": true,
+    "translation": true,
+    "programming": true,
+    "powerpoint_creation": true,
+    "graphic_generation": true,
+    "tool_calling": true,
+    "multi_language": true
+  },
+  "language_support": {
+    "english": true,
+    "python": true,
+    "any_language": true
+  },
+  "training_data_spec": {
+    "format": "sft.jsonl with pack/user/assistant fields",
+    "packs": [
+      "english",
+      "python",
+      "bugs",
+      "tool-use-citations",
+      "fact-checking",
+      "boundary-aware"
+    ],
+    "rows_per_pack": {
+      "english": 3,
+      "python": 3,
+      "bugs": 6,
+      "tool-use-citations": 8,
+      "fact-checking": 3,
+      "boundary-aware": 3
+    }
+  },
+  "integration": {
+    "clyde_repo": "~/Clyde/",
+    "ollama_compatible": true,
+    "github": "~/services/local_storage/tinygpt/"
+  },
+  "created": "2026-10-07",
+  "description": "Base model architecture for Clyde AI system - minimal TinyGPT model with full capability suite"
+}

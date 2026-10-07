@@ -1,0 +1,25 @@
+{
+  "name": "clyde-tinygpt",
+  "version": "1.0.0",
+  "description": "Clyde TinyGPT model base - minimal GPT architecture",
+  "packages": [
+    "tinygpt_model.py - Core model architecture",
+    "train.py - Training script",
+    "inference.py - Text generation",
+    "tokenizer.py - Character-level tokenization"
+  ],
+  "dependencies": {
+    "runtime": "torch>=2.0 (CPU version)",
+    "dev": [
+      "pytest",
+      "black",
+      "flake8"
+    ]
+  },
+  "entry_points": {
+    "console_scripts": [
+      "clyde-train=tinygpt.train:main",
+      "clyde-generate=tinygpt.inference:main"
+    ]
+  }
+}
